@@ -4,11 +4,6 @@
   <artifactId>excelReadAndWrite</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
-  	<dependency>
-    	<groupId>org.apache.poi</groupId>
-    	<artifactId>poi</artifactId>
-    	<version>4.1.0</version>
-	</dependency>  
 	<dependency>
     	<groupId>org.apache.poi</groupId>
     	<artifactId>poi-ooxml</artifactId>
@@ -26,13 +21,22 @@
           <target>1.8</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <configuration>
-             <mainClass>excelReadAndWrite.ReadWriteExcel</mainClass>
-        </configuration>
-        </plugin>
+     <plugin>  
+   <groupId>org.codehaus.mojo</groupId>  
+   <artifactId>exec-maven-plugin</artifactId>  
+   <version>1.4.0</version>  
+   <executions>  
+    <execution>  
+     <phase>install</phase>  
+     <goals>  
+      <goal>java</goal>  
+     </goals>  
+     <configuration>  
+      <mainClass>excelReadAndWrite.ReadWriteExcel</mainClass>  
+     </configuration>  
+    </execution>  
+   </executions>  
+  </plugin>  
     </plugins>
   </build>
 </project>
